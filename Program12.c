@@ -20,9 +20,9 @@ void nqueen(int n) {
     int x[10], k = 1, i, count = 0;
     x[k] = 0;
     while(k != 0) {
-        x[k] = x[k] + 1;
+        x[k]++;
         while(x[k] <= n && place(x,k) == 0)
-            x[k] = x[k] + 1;
+            x[k]++;
         if(x[k] <= n) {
             if(k == n) {
                 count++;
@@ -31,8 +31,7 @@ void nqueen(int n) {
                     printf("%d \t", x[i]);
             }
             else {
-                k = k + 1;
-                x[k] = 0;
+                x[++k] = 0;
             }
         }
         else
